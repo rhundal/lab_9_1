@@ -1,6 +1,7 @@
 import "./App.css";
 import AlertBox from "./components/AlertBox";
 import { UserProfileCard } from "./components/UserProfileCard";
+import { ProductDisplay } from "./components/ProductDisplay";
 
 import { useState } from "react";
 
@@ -15,6 +16,15 @@ function App() {
     email: "john.doe@example.com",
     role: "Software Engineer",
     avatarUrl: "../public/images/user-default.jpg",
+  };
+
+  const product = {
+    id: "1",
+    name: "Wireless Headphones",
+    price: 199.99,
+    description: "High-quality wireless headphones with noise cancellation.",
+    imageUrl: "../public/images/headphones.avif",
+    inStock: true,
   };
 
   return (
@@ -37,6 +47,17 @@ function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <UserProfileCard user={user} showEmail={true} showRole={true} />
+        </div>
+
+        <div className="w-[50%]">
+          <ProductDisplay
+            product={product}
+            showDescription={true}
+            showStockStatus={true}
+            onAddToCart={(productId) =>
+              alert(`Added product ${productId} to cart`)
+            }
+          />
         </div>
       </div>
     </>
