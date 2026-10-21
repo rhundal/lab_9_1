@@ -35,9 +35,10 @@ export const ProductDisplay: React.FC<ProductDisplayProps> = (props) => {
         </div>
       )}
       <div>
+        {props.children}
         <button
           type="submit"
-          className="bg-blue-600 font-medium py-2 px-4 text-white rounded-md w-full"
+          className="mt-5 bg-blue-600 font-medium py-2 px-4 text-white rounded-md w-full"
         >
           Add to Cart
         </button>

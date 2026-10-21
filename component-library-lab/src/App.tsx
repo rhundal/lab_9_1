@@ -57,7 +57,9 @@ function App() {
             onAddToCart={(productId) =>
               alert(`Added product ${productId} to cart`)
             }
-          />
+          >
+            <p className="text-sm">Free shipping on this product.</p>
+          </ProductDisplay>
         </div>
       </div>
     </>
