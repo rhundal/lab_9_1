@@ -6,7 +6,12 @@ import { ProductDisplay } from "./components/ProductDisplay";
 import { useState } from "react";
 
 function App() {
-  const [showAlert, setShowAlert] = useState(true);
+  const [alertStates, setAlertStates] = useState({
+    success: true,
+    error: true,
+    warning: true,
+    info: true,
+  });
 
   const allTypes = ["success", "error", "warning", "info"] as const;
 
@@ -32,11 +37,17 @@ function App() {
       <div className="p-4">
         {allTypes.map(
           (typeVal) =>
-            showAlert && (
+            alertStates[typeVal] && (
               <AlertBox
+                key={typeVal}
                 type={typeVal}
                 message="Your profile has been updated successfully!"
-                onClose={() => setShowAlert(false)}
+                onClose={() =>
+                  setAlertStates((prev) => ({
+                    ...prev,
+                    [typeVal]: false,
+                  }))
+                }
               >
                 <p className="text-sm">
                   You can now continue using the application.
