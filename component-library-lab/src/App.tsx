@@ -70,6 +70,7 @@ function App() {
             showRole={true}
             onEdit={() => editFunction(user.id)} // passing onEdit Prop here
           />
+          <div className="text-sm text-gray-500">Last login: 2 hours ago</div>
         </div>
 
         <div className="w-[50%]">

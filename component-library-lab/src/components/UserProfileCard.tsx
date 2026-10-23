@@ -46,6 +46,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = (props) => {
           Edit Profile
         </button>
       </div>
+      {props.children}
     </div>
   );
 };
