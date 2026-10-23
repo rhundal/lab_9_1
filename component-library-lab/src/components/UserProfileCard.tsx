@@ -36,7 +36,13 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = (props) => {
         </div>
       </div>
       <div style={btnStyle}>
-        <button type="submit" className="w-full h-10 bg-blue">
+        <button
+          type="submit"
+          className="w-full h-10 bg-blue"
+          onClick={() => {
+            if (props.onEdit) props.onEdit(props.user.id);
+          }}
+        >
           Edit Profile
         </button>
       </div>

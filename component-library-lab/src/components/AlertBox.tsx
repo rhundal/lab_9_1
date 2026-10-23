@@ -1,6 +1,7 @@
 import React from "react";
 import { type AlertBoxProps } from "../types/index.ts";
 
+// passing AlertBoxProps props which are declared in as interface and imported from index.ts
 const AlertBox: React.FC<AlertBoxProps> = (props: AlertBoxProps) => {
   const alertStyles = {
     success: "bg-green-100 border-green-500 text-green-700",

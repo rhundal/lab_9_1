@@ -32,6 +32,10 @@ function App() {
     inStock: true,
   };
 
+  function editFunction(userId: string) {
+    alert(`Editing user ${userId}`);
+  }
+
   return (
     <>
       <div className="p-4">
@@ -39,10 +43,12 @@ function App() {
           (typeVal) =>
             alertStates[typeVal] && (
               <AlertBox
-                key={typeVal}
-                type={typeVal}
-                message="Your profile has been updated successfully!"
+                key={typeVal} // help sidentifying each alerbox individually
+                type={typeVal} // typeVal is a prop which is declared in index.ts and can be of value held in array allTypes
+                message="Your profile has been updated successfully!" // prop declared in the index.ts again which is unpacked in AlertBox.tsx and value is passed here
+                // another prop which handles the behavior of closng the box
                 onClose={() =>
+                  // i customized this function to handle closing of separate alert boxes individually
                   setAlertStates((prev) => ({
                     ...prev,
                     [typeVal]: false,
@@ -57,7 +63,13 @@ function App() {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <UserProfileCard user={user} showEmail={true} showRole={true} />
+          {/* In this Component, user, showEmail and showRole are props declared in the index.ts */}
+          <UserProfileCard
+            user={user}
+            showEmail={true}
+            showRole={true}
+            onEdit={() => editFunction(user.id)} // passing onEdit Prop here
+          />
         </div>
 
         <div className="w-[50%]">
