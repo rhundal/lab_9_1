@@ -36,6 +36,10 @@ function App() {
     alert(`Editing user ${userId}`);
   }
 
+  function handleAddToCard(passedProductId: string) {
+    alert(`Added product ${passedProductId} to cart`);
+  }
+
   return (
     <>
       <div className="p-4">
@@ -78,9 +82,7 @@ function App() {
             product={product}
             showDescription={true}
             showStockStatus={true}
-            onAddToCart={(productId) =>
-              alert(`Added product ${productId} to cart`)
-            }
+            onAddToCart={() => handleAddToCard(product.id)}
           >
             <p className="text-sm">Free shipping on this product.</p>
           </ProductDisplay>

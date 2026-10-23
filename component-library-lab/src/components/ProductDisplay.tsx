@@ -38,6 +38,9 @@ export const ProductDisplay: React.FC<ProductDisplayProps> = (props) => {
         {props.children}
         <button
           type="submit"
+          onClick={() => {
+            if (props.onAddToCart) props.onAddToCart(props.product.id);
+          }}
           className="mt-5 bg-blue-600 font-medium py-2 px-4 text-white rounded-md w-full"
         >
           Add to Cart
