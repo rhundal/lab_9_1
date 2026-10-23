@@ -84,7 +84,9 @@ function App() {
             showStockStatus={true}
             onAddToCart={() => handleAddToCard(product.id)}
           >
-            <p className="text-sm">Free shipping on this product.</p>
+            <div className="text-sm text-gray-500">
+              Free shipping available
+            </div>{" "}
           </ProductDisplay>
         </div>
       </div>
