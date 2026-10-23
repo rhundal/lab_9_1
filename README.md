@@ -16,3 +16,10 @@
   - By importing respective (AlertBoxProps, UserProfileCardProps, ProductDisplayProps) props types/interfaces from the types file and checking for props type in the components against these types.
 - What challenges did you face when implementing component composition?
   - I struggled initally with understanding how to utilize react functional components returned by the respective components but it became obvious after I looked at what the composition example was suppsoe to look like, it made sense then calling the respective components and designing those components internally to handle the required props was the next step.
+
+#### How to run my project
+
+- cd component-library
+- cd component-library-lab/
+- npm install
+- npm run dev
