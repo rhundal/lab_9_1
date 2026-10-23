@@ -35,6 +35,7 @@ export const ProductDisplay: React.FC<ProductDisplayProps> = (props) => {
         </div>
       )}
       <div>
+        {/* prop handling for displaying extra line (child) above the edit button in this component */}
         {props.children}
         <button
           type="submit"
